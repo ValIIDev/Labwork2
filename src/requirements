@@ -1,0 +1,5 @@
+Create a class that has at least two private member-variables and at least two public methods.
+Construct a class that inherits the class constructed earlier and adds at least two private fields and at least two public methods.
+In the derived class, describe at least one method that overrides a method of the base class.
+Describe at least one constructor with parameters in the derived class. The constructor must pass at least one parameter to the constructor of the base class.
+Create an object of the derived class in the main function and demonstrate behavior of the derived class.

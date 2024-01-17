@@ -1,15 +1,76 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+// First class
+class FirstClass {
+    // Private member variables
+    private int price;
+    private String title;
+
+    // Public methods
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+}
+
+// Second class derived from FirstClass
+class SecondClassDerived extends FirstClass {
+    // Additional private member variables
+    private double range;
+    private int speed;
+
+    // Constructor with parameters (passing parameters to the base class constructor)
+    public SecondClassDerived(int price, String title, double range, int speed) {
+
+        // Set values for the base class variables using the setters
+        setPrice(price);
+        setTitle(title);
+
+        // Set values for the derived class variables
+        this.range = range;
+        this.speed = speed;
+    }
+
+    // Additional public methods in the derived class
+    public double getrange() {
+        return range;
+    }
+
+    public int getspeed() {
+        return speed;
+    }
+    @Override
+    public String getTitle() {
+
+        return "Derived Title: " + super.getTitle();
+    }
+}
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        FirstClass object2 = new FirstClass();
+        object2.setPrice(20);
+        object2.setTitle("titl2");
+        // Create an object of the derived class
+        SecondClassDerived myObject = new SecondClassDerived(10, "Title", 5.5, 42);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+
+        System.out.println("Price of firstclass: " + object2.getPrice());
+        System.out.println("Title :" + object2.getTitle());
+        // Demonstrate behavior of the derived class
+        System.out.println("Price: " + myObject.getPrice());
+        System.out.println("Title: " + myObject.getTitle());
+        System.out.println("range: " + myObject.getrange());
+        System.out.println("speed: " + myObject.getspeed());
+        System.out.println();
     }
 }
